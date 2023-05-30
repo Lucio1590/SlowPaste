@@ -23,7 +23,7 @@ chrome.commands.onCommand.addListener(async (command) => {
                             
                         }
                         index++;
-                    }, Math.floor(Math.random() * 100) + 50);
+                    }, Math.floor(Math.random() * 10) + 50);
                 }
             },
             function (results) {
