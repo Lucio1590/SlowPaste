@@ -1,0 +1,35 @@
+{
+  "name": "Paste Slowly",
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "manifest_version": 3,
+  "version": "0.3.5",
+  "description": "Paste slowly to avoid spam detection",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "tabs"
+  ],
+ 
+  "background": {
+    "service_worker": "background.js"
+  },
+  "commands": {
+    "paste-slowly": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+Y",
+        "mac": "Command+Shift+Y"
+      },
+      "description": "Paste slowly to avoid spam detection"
+    },
+    "_execute_action": {
+      "suggested_key": {
+        "windows": "Ctrl+Shift+Y",
+        "mac": "Command+Shift+Y",
+        "chromeos": "Ctrl+Shift+U",
+        "linux": "Ctrl+Shift+J"
+      }
+    }
+  }
+}
