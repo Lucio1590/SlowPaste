@@ -1,5 +1,7 @@
+
 chrome.commands.onCommand.addListener(async (command) => {
     console.log('onCommand event received for message: ', command);
+    
     if (command === "paste-slowly") {
         await chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
             const tab = tabs[0];
@@ -18,9 +20,11 @@ chrome.commands.onCommand.addListener(async (command) => {
                         
                         const activeElement = document.activeElement;
                         if (activeElement) {
-                            
-                            activeElement.value += char;
-                            
+                            if (activeElement.tagName === "INPUT") {
+                                activeElement.value += char;
+                            } else {
+                                activeElement.innerHTML += char;
+                            }
                         }
                         index++;
                     }, Math.floor(Math.random() * 10) + 50);

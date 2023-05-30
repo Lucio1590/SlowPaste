@@ -3,8 +3,11 @@
   "action": {
     "default_popup": "popup.html"
   },
+  "icons": {
+    "128": "icon.png"
+  },
   "manifest_version": 3,
-  "version": "0.3.5",
+  "version": "0.0.2",
   "description": "Paste slowly to avoid spam detection",
   "permissions": [
     "activeTab",
@@ -17,6 +20,13 @@
   },
   "commands": {
     "paste-slowly": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+Y",
+        "mac": "Command+Shift+Y"
+      },
+      "description": "Paste slowly to avoid spam detection"
+    },
+    "stop-pasting": {
       "suggested_key": {
         "default": "Ctrl+Shift+Y",
         "mac": "Command+Shift+Y"
